@@ -1,7 +1,13 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
 
-DATABASE_URL = "mssql+pyodbc://@OPTLAP-D5268X6Y\\SQLEXPRESS/UserDB?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable is required")
 
 engine = create_engine(DATABASE_URL)
 

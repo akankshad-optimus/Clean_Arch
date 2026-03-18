@@ -21,6 +21,7 @@ Thumbs.db
 
 # FastAPI / Uvicorn
 *.db
+.env
 
 # Git
 *.patch

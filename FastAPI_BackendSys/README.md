@@ -23,11 +23,22 @@ This folder contains the FastAPI backend entrypoint and local project setup for 
    pip install -r requirements.txt
    ```
 
-3. Run the app:
+3. Copy `.env.example` to `.env` and fill critical values:
+
+   ```powershell
+   copy .env.example .env
+   ```
+
+4. Run the app:
 
    ```powershell
    uvicorn main:app --reload
    ```
+
+## Secure Data Notes
+
+- Never commit `.env` to Git; `.gitignore` already excludes it.
+- Store secrets in environment variables in production (e.g. Docker secrets, cloud key vault).
 
 ## Notes
 
